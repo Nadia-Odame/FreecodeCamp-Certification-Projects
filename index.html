@@ -1,1 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Inventory</title>
+  <style>
+    body {
+      font-family: Georgia, serif;
+      background: #1a1a2e;
+      color: #e0e0e0;
+      padding: 2rem;
+      margin: 0;
+    }
 
+    h1 {
+      text-align: center;
+      font-size: 2.2rem;
+      color: #c9a96e;
+      letter-spacing: 2px;
+      margin-bottom: 2rem;
+      text-transform: uppercase;
+      border-bottom: 2px solid #c9a96e;
+      padding-bottom: 0.5rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #16213e;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    thead th {
+      background: #0f3460;
+      color: #c9a96e;
+      padding: 14px 16px;
+      text-align: left;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    tbody td {
+      padding: 12px 16px;
+      font-size: 0.95rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    span {
+      display: inline-block;
+    }
+
+    tr[class="read"] {
+      background-image: linear-gradient(135deg, #1a3a2a 0%, #0d2016 100%);
+    }
+
+    tr[class="to-read"] {
+      background-image: linear-gradient(135deg, #1a2a3a 0%, #0d1620 100%);
+    }
+
+    tr[class="in-progress"] {
+      background-image: linear-gradient(135deg, #3a2a1a 0%, #201608 100%);
+    }
+
+    tr[class="to-read"] span[class="status"] {
+      border: 1px solid #5b9bd5;
+      background-image: linear-gradient(135deg, #1a3a5a, #0d2040);
+      color: #7ec8e3;
+      padding: 3px 10px;
+      border-radius: 12px;
+      font-size: 0.8rem;
+    }
+
+    tr[class="read"] span[class="status"] {
+      border: 1px solid #4caf7d;
+      background-image: linear-gradient(135deg, #1a4a2a, #0d2a18);
+      color: #81c99a;
+      padding: 3px 10px;
+      border-radius: 12px;
+      font-size: 0.8rem;
+    }
+
+    tr[class="in-progress"] span[class="status"] {
+      border: 1px solid #d4a843;
+      background-image: linear-gradient(135deg, #4a3a0a, #2a200a);
+      color: #e8c46a;
+      padding: 3px 10px;
+      border-radius: 12px;
+      font-size: 0.8rem;
+    }
+
+    span[class="status"],
+    span[class^="rate"] {
+      height: 28px;
+      width: auto;
+      padding: 3px 8px;
+    }
+
+    span[class^="rate"] > span {
+      border: 1px solid #555;
+      border-radius: 50%;
+      margin: 0 2px;
+      height: 14px;
+      width: 14px;
+      background-color: #2a2a3a;
+    }
+
+    span[class~="one"] > span:first-child {
+      background-image: linear-gradient(135deg, #c9a96e, #8b6914);
+    }
+
+    span[class~="two"] > span:nth-child(-n+2) {
+      background-image: linear-gradient(135deg, #c9a96e, #8b6914);
+    }
+
+    span[class~="three"] > span {
+      background-image: linear-gradient(135deg, #c9a96e, #8b6914);
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Book Inventory</h1>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Author</th>
+        <th>Category</th>
+        <th>Status</th>
+        <th>Rate</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="read">
+        <td>The Name of the Wind</td>
+        <td>Patrick Rothfuss</td>
+        <td>Fantasy</td>
+        <td><span class="status">Read</span></td>
+        <td><span class="rate three"><span></span><span></span><span></span></span></td>
+      </tr>
+      <tr class="read">
+        <td>Project Hail Mary</td>
+        <td>Andy Weir</td>
+        <td>Sci-Fi</td>
+        <td><span class="status">Read</span></td>
+        <td><span class="rate two"><span></span><span></span><span></span></span></td>
+      </tr>
+      <tr class="to-read">
+        <td>The Shadow of the Wind</td>
+        <td>Carlos Ruiz Zafón</td>
+        <td>Mystery</td>
+        <td><span class="status">To Read</span></td>
+        <td><span class="rate"><span></span><span></span><span></span></span></td>
+      </tr>
+      <tr class="in-progress">
+        <td>Piranesi</td>
+        <td>Susanna Clarke</td>
+        <td>Fantasy</td>
+        <td><span class="status">In Progress</span></td>
+        <td><span class="rate"><span></span><span></span><span></span></span></td>
+      </tr>
+      <tr class="read">
+        <td>Educated</td>
+        <td>Tara Westover</td>
+        <td>Memoir</td>
+        <td><span class="status">Read</span></td>
+        <td><span class="rate one"><span></span><span></span><span></span></span></td>
+      </tr>
+      <tr class="to-read">
+        <td>Tomorrow, and Tomorrow, and Tomorrow</td>
+        <td>Gabrielle Zevin</td>
+        <td>Literary Fiction</td>
+        <td><span class="status">To Read</span></td>
+        <td><span class="rate"><span></span><span></span><span></span></span></td>
+      </tr>
+    </tbody>
+  </table>
+
+</body>
+</html>
