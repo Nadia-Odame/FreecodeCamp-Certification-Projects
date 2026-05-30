@@ -1,1 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Python Documentation</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
+    body {
+      font-family: 'Courier New', monospace;
+      background: #0d1117;
+      color: #c9d1d9;
+      display: flex;
+      min-height: 100vh;
+    }
+
+    #navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 280px;
+      height: 100vh;
+      background: #161b22;
+      border-right: 1px solid #30363d;
+      overflow-y: auto;
+      padding: 1.5rem 0;
+    }
+
+    #navbar header {
+      font-size: 1.1rem;
+      font-weight: bold;
+      color: #58a6ff;
+      padding: 0 1.5rem 1rem;
+      border-bottom: 1px solid #30363d;
+      margin-bottom: 0.5rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .nav-link {
+      display: block;
+      padding: 0.6rem 1.5rem;
+      color: #8b949e;
+      text-decoration: none;
+      font-size: 0.9rem;
+      border-left: 3px solid transparent;
+      transition: all 0.2s;
+    }
+
+    .nav-link:hover {
+      color: #58a6ff;
+      background: #21262d;
+      border-left-color: #58a6ff;
+    }
+
+    #main-doc {
+      margin-left: 280px;
+      padding: 3rem;
+      max-width: 900px;
+      width: 100%;
+    }
+
+    .main-section {
+      margin-bottom: 4rem;
+      padding-bottom: 3rem;
+      border-bottom: 1px solid #21262d;
+    }
+
+    .main-section header {
+      font-size: 1.8rem;
+      color: #58a6ff;
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid #30363d;
+    }
+
+    .main-section p {
+      line-height: 1.8;
+      margin-bottom: 1rem;
+      color: #c9d1d9;
+      font-size: 0.95rem;
+    }
+
+    code {
+      display: block;
+      background: #161b22;
+      border: 1px solid #30363d;
+      border-left: 4px solid #58a6ff;
+      border-radius: 4px;
+      padding: 1rem 1.2rem;
+      margin: 1rem 0;
+      font-size: 0.88rem;
+      color: #79c0ff;
+      white-space: pre;
+      overflow-x: auto;
+    }
+
+    ul {
+      margin: 1rem 0 1rem 1.5rem;
+    }
+
+    li {
+      margin-bottom: 0.5rem;
+      color: #c9d1d9;
+      line-height: 1.7;
+      font-size: 0.95rem;
+    }
+
+    li::marker {
+      color: #58a6ff;
+    }
+
+    @media (max-width: 768px) {
+      #navbar {
+        position: relative;
+        width: 100%;
+        height: auto;
+        border-right: none;
+        border-bottom: 1px solid #30363d;
+      }
+
+      #main-doc {
+        margin-left: 0;
+        padding: 1.5rem;
+      }
+
+      body {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav id="navbar">
+    <header>Python Docs</header>
+    <a class="nav-link" href="#Introduction">Introduction</a>
+    <a class="nav-link" href="#Variables_and_Types">Variables and Types</a>
+    <a class="nav-link" href="#Control_Flow">Control Flow</a>
+    <a class="nav-link" href="#Functions">Functions</a>
+    <a class="nav-link" href="#Lists_and_Dictionaries">Lists and Dictionaries</a>
+    <a class="nav-link" href="#Modules_and_Packages">Modules and Packages</a>
+  </nav>
+
+  <main id="main-doc">
+
+    <section class="main-section" id="Introduction">
+      <header>Introduction</header>
+      <p>Python is a high-level, interpreted programming language known for its clear syntax and readability. Created by Guido van Rossum and first released in 1991, Python has grown into one of the most popular languages in the world.</p>
+      <p>Python supports multiple programming paradigms including procedural, object-oriented, and functional programming. Its design philosophy emphasizes code readability with the use of significant indentation.</p>
+      <p>Python is widely used in web development, data science, artificial intelligence, scientific computing, and automation. Its vast standard library and active community make it a go-to choice for beginners and experts alike.</p>
+      <code># Your first Python program
+print("Hello, World!")</code>
+      <p>Python files use the <strong>.py</strong> extension. You can run a Python script from the terminal using the python command followed by the filename.</p>
+    </section>
+
+    <section class="main-section" id="Variables_and_Types">
+      <header>Variables and Types</header>
+      <p>In Python, variables are created when you assign a value to them. Python is dynamically typed, meaning you do not need to declare the type of a variable explicitly.</p>
+      <p>Python has several built-in data types. The most commonly used are integers, floats, strings, and booleans. Python automatically infers the type based on the assigned value.</p>
+      <code>name = "Alice"        # str
+age = 30              # int
+height = 5.7          # float
+is_active = True      # bool</code>
+      <p>You can check the type of any variable using the built-in <code>type()</code> function. Type conversion between compatible types is also straightforward in Python.</p>
+      <ul>
+        <li><strong>int</strong> — whole numbers like 1, 42, -7</li>
+        <li><strong>float</strong> — decimal numbers like 3.14, -0.5</li>
+        <li><strong>str</strong> — text enclosed in quotes</li>
+        <li><strong>bool</strong> — either True or False</li>
+      </ul>
+    </section>
+
+    <section class="main-section" id="Control_Flow">
+      <header>Control Flow</header>
+      <p>Control flow statements allow you to control the order in which code is executed. Python uses if, elif, and else statements for conditional logic.</p>
+      <p>Indentation is critical in Python — it defines the scope of code blocks. Unlike many other languages, Python does not use curly braces to group statements.</p>
+      <code>score = 85
+
+if score >= 90:
+    print("Grade: A")
+elif score >= 75:
+    print("Grade: B")
+else:
+    print("Grade: C")</code>
+      <p>Python also provides for and while loops for iteration. The for loop is especially powerful when combined with Python's iterable types like lists, strings, and ranges.</p>
+      <code>for i in range(5):
+    print(f"Count: {i}")</code>
+      <ul>
+        <li>Use <strong>break</strong> to exit a loop early</li>
+        <li>Use <strong>continue</strong> to skip the current iteration</li>
+        <li>Use <strong>pass</strong> as a placeholder in empty blocks</li>
+      </ul>
+    </section>
+
+    <section class="main-section" id="Functions">
+      <header>Functions</header>
+      <p>Functions are reusable blocks of code defined using the def keyword. They help organize code, avoid repetition, and improve readability.</p>
+      <p>Python functions can accept parameters and return values. Default parameter values and keyword arguments make Python functions very flexible.</p>
+      <code>def greet(name, greeting="Hello"):
+    return f"{greeting}, {name}!"
+
+print(greet("Bob"))
+print(greet("Alice", "Hi"))</code>
+      <p>Python also supports lambda functions — small anonymous functions defined with the lambda keyword. They are useful for short, throwaway operations.</p>
+      <p>Functions in Python are first-class objects, meaning they can be passed as arguments, returned from other functions, and stored in variables.</p>
+      <ul>
+        <li>Use <strong>*args</strong> to accept variable positional arguments</li>
+        <li>Use <strong>**kwargs</strong> to accept variable keyword arguments</li>
+      </ul>
+    </section>
+
+    <section class="main-section" id="Lists_and_Dictionaries">
+      <header>Lists and Dictionaries</header>
+      <p>Lists are ordered, mutable collections that can hold items of any type. They are one of the most used data structures in Python and support a wide range of built-in methods.</p>
+      <code>fruits = ["apple", "banana", "cherry"]
+fruits.append("mango")
+print(fruits[0])   # apple</code>
+      <p>Dictionaries store data as key-value pairs. They are unordered (in older Python versions) and optimized for fast lookups by key. Since Python 3.7, dictionaries maintain insertion order.</p>
+      <code>person = {
+    "name": "Alice",
+    "age": 30,
+    "city": "Paris"
+}
+print(person["name"])  # Alice</code>
+      <p>Both lists and dictionaries support comprehensions — a concise syntax for creating new collections based on existing ones.</p>
+      <ul>
+        <li>Access list items using zero-based index</li>
+        <li>Use <strong>.append()</strong> to add to a list</li>
+        <li>Use <strong>.get()</strong> on dicts to avoid KeyError</li>
+      </ul>
+    </section>
+
+    <section class="main-section" id="Modules_and_Packages">
+      <header>Modules and Packages</header>
+      <p>A module is a file containing Python code — functions, classes, or variables — that can be imported and reused in other scripts. Python comes with a rich standard library of built-in modules.</p>
+      <p>Packages are directories of modules with an __init__.py file. Third-party packages can be installed using pip, Python's package manager, from the Python Package Index (PyPI).</p>
+      <code>import math
+print(math.sqrt(16))   # 4.0
+
+from datetime import datetime
+print(datetime.now())</code>
+      <p>You can also create your own modules simply by saving Python code in a .py file and importing it into another script using the import statement.</p>
+      <ul>
+        <li>Use <strong>import module</strong> to import an entire module</li>
+        <li>Use <strong>from module import name</strong> for specific items</li>
+        <li>Use <strong>as</strong> to create an alias on import</li>
+      </ul>
+    </section>
+
+  </main>
+
+</body>
+</html>
